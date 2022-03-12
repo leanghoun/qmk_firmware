@@ -18,3 +18,5 @@
 
 #define ENCODERS_PAD_A { B3 }
 #define ENCODERS_PAD_B { B2 }
+
+#define OLED_TIMEOUT 5000

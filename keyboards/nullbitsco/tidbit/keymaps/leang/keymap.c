@@ -20,6 +20,160 @@
 #define _BASE     0
 #define _FUNC     1
 
+#ifdef OLED_DRIVER_ENABLE
+void oled_task_user(void) {
+    // Host Keyboard Layer Status
+    // oled_write_P(PSTR("Layer"), false);
+
+    switch (get_highest_layer(layer_state)) {
+        case _MLRM1:
+            /*  —,           Adjust Slider,  Previous Slider,  Next Slider
+               View Style,   Panels,         Undo,      	     Redo
+               Library,      Up,     	       Develop,          —
+               Left,         Down,     	     Right,            —
+               Reject/Next,  Pick/Next,       —,               — */
+            oled_write_P(PSTR("MLRM1\n"), false);
+            oled_write_P(PSTR(" -SPN\n"), false);
+            oled_write_P(PSTR(" VPUR\n"), false);
+            oled_write_P(PSTR(" LUD-\n"), false);
+            oled_write_P(PSTR(" LDR-\n"), false);
+            oled_write_P(PSTR(" RP- \n"), false);
+            break;
+        case _MLRM2:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("MLRM2\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" --- \n"), false);
+            break;
+        case _MCAP1:
+            /* —,        Adjust Slider,  Previous Image, Next Image
+               Exposure,  Contrast,       Brightness,     Saturation
+               Highlight, Shadow,         White,          Black
+               Kelvin,    Tint,           Dehaze,         Clarity
+               Undo,      Redo,           Before/After,   — */
+            oled_write_P(PSTR("MCAP1\n"), false);
+            oled_write_P(PSTR(" -SPN\n"), false);
+            oled_write_P(PSTR(" ECBS\n"), false);
+            oled_write_P(PSTR(" HSWB\n"), false);
+            oled_write_P(PSTR(" WTDC\n"), false);
+            oled_write_P(PSTR(" URB \n"), false);
+            break;
+        case _MCAP2:
+            /*             _______,       XXXXXXX,   XXXXXXX,
+              Focus Mask,  Before/After,  Grid,      Exposure Warning,
+              3 Star,      5 Star,        0 Star,    Auto Adjust,
+              Previous,    Next,          Copy Adj,  Paste Adj,
+              Select,      Zoom Out,      Zoom In,    -  */
+            oled_write_P(PSTR("MCAP2\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" FBGE\n"), false);
+            oled_write_P(PSTR(" 350A\n"), false);
+            oled_write_P(PSTR(" PNCP\n"), false);
+            oled_write_P(PSTR(" S-+ \n"), false);
+            break;
+        case _WLRM1:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("WLRM1\n"), false);
+            oled_write_P(PSTR(" -SPN\n"), false);
+            oled_write_P(PSTR(" VPUR\n"), false);
+            oled_write_P(PSTR(" LUD-\n"), false);
+            oled_write_P(PSTR(" LDR-\n"), false);
+            oled_write_P(PSTR(" RP- \n"), false);
+            break;
+        case _WLRM2:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("WLRM2\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" --- \n"), false);
+            break;
+        case _WCAP1:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("WCAP1\n"), false);
+            oled_write_P(PSTR(" -SPN\n"), false);
+            oled_write_P(PSTR(" ECBS\n"), false);
+            oled_write_P(PSTR(" HSWB\n"), false);
+            oled_write_P(PSTR(" WTDC\n"), false);
+            oled_write_P(PSTR(" URB \n"), false);
+            break;
+        case _WCAP2:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("WCAP2\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" --- \n"), false);
+            break;
+        case _9KEY:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("9KEY \n"), false);
+            oled_write_P(PSTR(" ---/\n"), false);
+            oled_write_P(PSTR(" 789*\n"), false);
+            oled_write_P(PSTR(" 456-\n"), false);
+            oled_write_P(PSTR(" 123+\n"), false);
+            oled_write_P(PSTR(" 0-.=\n"), false);
+            break;
+        case _FUNC:
+            /* —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, —
+               —, —, —, — */
+            oled_write_P(PSTR("FUNC \n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            oled_write_P(PSTR(" ----\n"), false);
+            break;
+        default:
+            // Or use the write_ln shortcut over adding '\n' to the end of your string
+            oled_write_ln_P(PSTR("UNDEF"), false);
+            break;
+    }
+
+    // Host Keyboard LED Status
+    /* led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.num_lock ? PSTR("NUM  ") : PSTR("     "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAP  ") : PSTR("     "), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SCR  ") : PSTR("     "), false); */
+    
+    return false;
+}
+#endif
+
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
+
 bool numlock_set = false;
 
 enum custom_keycodes {
