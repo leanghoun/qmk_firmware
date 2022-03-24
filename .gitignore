@@ -22,7 +22,7 @@ api_data/v1
 quantum/version.h
 *.bin
 *.eep
-*.hex
+# *.hex LKH Commenting out to upload hex files
 *.qmk
 *.uf2
 
