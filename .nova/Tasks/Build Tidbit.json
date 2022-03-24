@@ -1,0 +1,8 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "cd Documents\/GitHub\/qmk_firmware\/\nmake nullbitsco\/tidbit:leang"
+    }
+  }
+}
