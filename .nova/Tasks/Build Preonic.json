@@ -4,5 +4,6 @@
       "enabled" : true,
       "script" : "cd Documents\/GitHub\/qmk_firmware\/\nmake preonic\/rev2:leang"
     }
-  }
+  },
+  "openLogOnRun" : "start"
 }

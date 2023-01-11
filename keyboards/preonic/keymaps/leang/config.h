@@ -9,6 +9,7 @@
                                 }
 #endif
 
+#define AUDIO_INIT_DELAY
 #define MUSIC_MASK (keycode != KC_NO)
 
 /*
