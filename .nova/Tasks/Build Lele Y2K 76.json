@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "cd\ncd Documents\/GitHub\/qmk_firmware\/\nmake lelelab\/lele76:le0n"
+    }
+  },
+  "openLogOnRun" : "start"
+}
